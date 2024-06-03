@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare Service</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('healthcare_img.jpg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: white;
+        }
+
+        header {
+            text-align: left;
+            font-size: x-large;
+            padding: 20px;
+        }
+
+        .heading {
+            color: darkmagenta;
+            text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5); 
+        }
+
+        nav {
+            padding: 10px;
+            text-align: right;
+            position: fixed;
+            top: 60px;
+            right: 0;
+      }
+
+        nav a {
+          color: black;
+          font-weight: bold;
+          text-decoration: none;
+          padding: 10px 20px;
+          transition: background-color 0.3s ease;
+          font-size: large;
+      }
+
+
+
+        .thick-line {
+            border: 0;
+            height: 0.3px;
+            background-color: black;
+        }
+
+        .content {
+          text-align: left;
+          padding: 50px 20px; 
+          
+        }
+
+        .content h2 {
+              font-size: 35px;
+              margin: 10px 0;
+              font-family: 'Roboto Slab', serif;
+              text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5); 
+              color: darkblue; 
+              color: hsl(251, 90%, 45%); 
+              color: hsl(246, 92%, 49%); 
+          }
+          
+        button {
+            background-color: red;
+            padding: 16px;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        .cookie_pop_up {
+           
+            font-family: Arial, Helvetica, sans-serif;
+            color: black;
+            width: 100%;
+            height: 10vh;
+            border-radius: 10px;
+            border-style: solid;
+            border-width: 2px;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cookie_pop_up .cookie_button {
+            background-color: rgb(7, 245, 86);
+            border-radius: 5px;
+            font-size: medium;
+            width: 90px;
+            height: 40px;
+            cursor: pointer;
+        }
+
+        .cookie_pop_up .adjust {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .cookie_pop_up .adjust .cookie_close {
+            width: 70px;
+            border-radius: 5px;
+            border-width: 0.1px;
+            border-style: solid;
+            border-color: black;
+            cursor: pointer;
+            background-color:red ;
+           
+        }
+
+        .cookie_button:hover,
+        .cookie_close:hover {
+            background-color: rgba(17, 250, 9, 0.5);
+        }
+
+        .cookie_pop_up p {
+            margin: 5px;
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="heading">Healthcare Service</h1>
+    </header>
+    <nav> 
+        <a>Home</a>
+        <a href="about.html">About Company</a>
+        <a href="service.html">Service Offered</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Contact Us</a>
+    </nav>
+    <hr class="thick-line">
+    <div class="content">
+        <h2>Service Users</h2>
+        <h2>Deserve</h2>
+        <h2>Better</h2>
+        <h2>Connected</h2>
+        <h2>Care</h2>
+        <button type="submit"><a href="enquire.html">Appoint Now</a></button> 
+    </div>
+    <div class="cookie_pop_up">
+        <div class="adjust">
+            <h3 style="margin: 3px;">Cookies</h3>
+            <button type="button" class="cookie_close" style="margin-right: 5px; margin-top: 5px;">deny</button>
+        </div>
+        <p>we use cookies for better experience in our webiste.so,click accept to accept the cookie.</p>
+        <button type="button" class="cookie_button">Accept</button>
+    </div>
+    <script>
+        const close = document.querySelector('.cookie_close');
+        const cookiepop = document.querySelector('.cookie_pop_up');
+        close.addEventListener("click", closefun);
+
+        function closefun() {
+            cookiepop.style.display = 'none';
+        }
+
+        if (document.cookie.startsWith("acceptedCookies=")) {
+            cookiepop.style.display = 'none';
+        }
+
+        const cookiebutton = document.querySelector('.cookie_button');
+        cookiebutton.addEventListener('click', acceptCookies);
+
+        function setCookie(name, value, days) {
+            var now = new Date();
+            var expirationTime = new Date(now.getTime() + (days * 30 * 1000));
+            document.cookie = name + "=" + value + "; expires=" + expirationTime.toUTCString() + "; path=/; SameSite=None; Secure";
+            cookiepop.style.display = 'none';
+        }
+
+        function acceptCookies() {
+            setCookie('acceptedCookies', 'true', 1);
+        }
+    </script>
+</body>
+</html>

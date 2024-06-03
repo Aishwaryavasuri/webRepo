@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login Page</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background-color: #000; 
+        background-image: url('login.jpg'); 
+        background-size: cover;
+        background-position: center;
+    }
+
+    .login-container {
+        background-image: url('login.jpg'); 
+        background-size: cover;
+        background-position: center;
+        padding: 100px 0;
+    }
+
+    .login-box {
+        width: 400px;
+        margin: auto;
+        padding: 30px;
+       
+        border-radius: 10px;
+        border: 2px solid #333;
+        color: #fff;
+        text-align: center;
+        font-size: 18px;
+    }
+
+    .login-box input {
+        width: calc(100% - 20px); 
+        margin-bottom: 20px; 
+        padding: 10px;
+        box-sizing: border-box;
+        border-radius: 5px;
+        border: none;
+        background-color: rgba(255, 255, 255, 0.1); 
+        color: #fff;
+        outline: none;
+    }
+
+    .login-box button {
+        width: 48%; 
+        padding: 10px;
+        box-sizing: border-box;
+        border-radius: 5px;
+        border: none;
+        background-color: #4caf50; 
+        color: #fff;
+        cursor: pointer;
+        outline: none;
+        display: inline-block;
+    }
+
+    .login-box button.cancel {
+        background-color: #f44336; 
+    }
+
+    .signup-link {
+        color: #fff;
+        text-decoration: none;
+    }
+
+    .signup-link:hover {
+        text-decoration: underline;
+    }
+</style>
+</head>
+<script>
+    function checkfirstcokkie(){
+        if(document.cookie.startsWith("acceptedCookies=")){
+            window.location.replace("./UI.html")
+        }
+    }
+</script>
+<body onload="checkfirstcokkie()">
+<div class="login-container">
+    <div class="login-box">
+        <h2>Login</h2>
+        <form action="http://localhost:3000/login_form" method="post"> 
+            <input type="text" name="username" placeholder="username" required>
+            <input type="password" name="password" placeholder="password" required>
+            <button id="loginbutton" type="submit">Login</button>
+            <button type="button" class="cancel">Cancel</button>
+        </form>
+        <p>Doesn't have an account? <a href="signup2.html" class="signup-link">Signup</a></p>
+    </div>
+</div>
+<script src="data.js"></script>
+<!-- <script>document.getElementById("loginbutton").addEventListener('click', function redirect(){
+    window.location.href('UI.html');
+})</script> -->
+</body>
+</html>
+

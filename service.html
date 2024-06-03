@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Healthcare Services</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+    .main-box {
+        border: 10px solid black; 
+        padding: 20px;
+    }
+    .container {
+        display: flex; 
+        justify-content: space-around; 
+        flex-wrap: wrap; 
+    }
+    .box {
+        width: 45%; 
+        margin: 10px;
+        padding: 20px;
+        border: 5px solid purple; 
+        box-sizing: border-box; 
+    }
+    h2 {
+        color: #0d4a7c;
+        font-size: 30px;
+    }
+    .stethoscope, .ambulance {
+        font-size: 24px;
+    }
+    .back-button {
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 5px 10px;
+        cursor: pointer;
+        font-size: 14px;
+    }
+</style>
+</head>
+<body>
+
+<div class="main-box">
+    <div class="container">
+        <div class="box">
+            <h2><i class="fas fa-heartbeat"></i> Health Importance</h2>
+            <p>The most important thing for a person is health. A good health is ground for all happiness. Our goal is to provide the best care in different phases of life with quality healthcare services round the clock.</p>
+        </div>
+        <div class="box">
+            <h2><i class="fas fa-stethoscope"></i> Services Provided</h2>
+            <ul>
+                <li>BP checkup for screening hypertension in elderly people</li>
+                <li>Blood sugar tests for screening diabetes</li>
+                <li>Routine health check-up</li>
+                <li>Immunization</li>
+                <li>Antenatal care</li>
+                <li>Treatment of dog bite</li>
+                <li>Pap smear for screening cervical cancer</li>
+                <li>Preventive and curative care aspects of health</li>
+            </ul>
+        </div>
+        <div class="box">
+            <h2 class="stethoscope"><i class="fas fa-stethoscope"></i> Medical Counselling</h2>
+            <p>Counselling the patient about the importance of physical, mental, and social health, maintaining good communication between the patient and provider. Counselling about major health aspects like cessation of smoking, drinking alcohol, etc. Counselling regarding family planning to couples. Medical counselling covers all aspects of physical, mental, and social health of the patient.</p>
+        </div>
+        <div class="box">
+            <h2><i class="fas fa-ambulance"></i> Working Hours</h2>
+            <p>24/7 hospital services, book appointments online, ambulance service. Our hospital provides a medical helpline number. Call the given number for making appointments, clarification of doubts to save your precious time.</p>
+        </div>
+    </div>
+</div>
+
+<button class="back-button" onclick="goBack()">Back</button>
+
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>
+
+</body>
+</html>

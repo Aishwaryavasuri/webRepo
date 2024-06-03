@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Form</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #ffffff; 
+        margin: 0;
+        padding: 0;
+    }
+    .container {
+        display: flex;
+        padding: 20px;
+    }
+    .left-side, .right-side {
+        flex: 1;
+    }
+    .left-side {
+        padding-right: 20px;
+    }
+    .right-side {
+        padding-left: 20px;
+    }
+    .contact-info {
+        margin-bottom: 20px;
+    }
+    .contact-info span {
+        display: block;
+        margin-bottom: 10px; 
+    }
+    .contact-info i {
+        margin-right: 5px;
+    }
+    form {
+        background-color: #ffffff; 
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    }
+    input[type="text"], input[type="email"], textarea {
+        width: calc(100% - 22px); 
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+    input[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    input[type="submit"]:hover {
+        background-color: #45a049;
+    }
+    .back-button {
+        position: fixed;
+        top: 20px;
+        right: 20px; 
+        background-color: #4CAF50; 
+        color: white; 
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        z-index: 9999;
+    }
+</style>
+</head>
+<body>
+
+<button class="back-button" onclick="goBack()">Back</button>
+
+<div class="container">
+    <div class="left-side">
+        <h2>Having a query! Shoot us a message</h2>
+
+        <form id="contactForm" action="http://localhost:3000/message_form" method="post">
+            
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" required>
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <input type="submit" value="Send Message">
+        </form>
+    </div>
+
+    <div class="right-side">
+        <h2>Contact Us</h2>
+        <div class="contact-info">
+            <span><i class="fas fa-map-marker-alt"></i>Location: Chennai, Tamil Nadu, India</span>
+            <span><i class="fas fa-envelope"></i>Email: info@gmail.com</span>
+            <span><i class="fas fa-phone"></i>Phone: +6178448</span>
+        </div>
+    </div>
+</div>
+
+<script>
+document.getElementById("contactForm").addEventListener("submit", function(event) {
+    var email = document.getElementById("email").value;
+    var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(email)) {
+        alert("Please enter a valid email address.");
+        event.preventDefault();
+    }
+});
+
+function goBack() {
+  window.history.back();
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frequently Asked Questions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: black;
+            font-weight: bold;
+            font-size: large;
+        }
+        h2 {
+            margin-bottom: 20px;
+            color: black;
+            font-size: medium;
+        }
+        .search-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        .faq {
+            border-bottom: 1px solid #ccc;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+        }
+        .faq ul {
+            list-style: none;
+            padding: 0;
+        }
+        .faq li {
+            margin-bottom: 20px;
+        }
+        .back-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: #4CAF50; 
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body>
+        
+    <div class="container">
+        <h1>Frequently Asked Questions</h1>
+        <button class="back-button" onclick="goBack()">Back</button>
+        <div ng-app="MyApp" ng-controller="questionCtrl">
+            <div class="search-container">
+                <input type="text" ng-model="searchText">
+                <input type="submit" value="Search">
+            </div>
+            <ul>
+                <li ng-repeat="x in faqQuestions | filter: searchText">
+                    <h2 ng-bind="x.question"></h2>
+                    <p ng-bind="x.answer"></p>
+                </li>
+            </ul>
+        </div>
+        <script>
+            angular.module('MyApp', []).controller('questionCtrl', function($scope) {
+                $scope.faqQuestions = [
+                    { 
+                        question: 'What are the recommended intervals for routine health check-ups?',
+                        answer: '- Routine health check-ups are typically recommended annually for adults, although the frequency may vary based on individual health conditions and risk factors. It\'s best to consult with your healthcare provider to determine the appropriate schedule for your specific needs.' 
+                    },
+                    {
+                        question: 'How often should elderly individuals undergo BP checkups for hypertension screening?',
+                        answer: '- Elderly individuals should undergo BP checkups at least once a year for hypertension screening. However, those with hypertension or other cardiovascular risk factors may require more frequent monitoring, as advised by their healthcare provider.' 
+                    },
+                    {
+                        question: 'Can I book appointments for immunizations online?',
+                        answer: '- Yes, appointments for immunizations can be conveniently booked online through our hospital\'s website or mobile app. Simply select the desired immunization service and choose a suitable date and time for your appointment.' 
+                    },
+                    {
+                        question: 'What immunizations are available for adults?',
+                        answer: '- Our hospital offers a range of immunizations for adults, including vaccines for influenza, pneumonia, shingles, hepatitis, and tetanus, among others. Your healthcare provider can recommend specific vaccines based on your age, medical history, and risk factors.' 
+                    },
+                    {
+                        question: 'Do you offer antenatal care packages, and what do they include?',
+                        answer: '- Yes, we provide comprehensive antenatal care packages tailored to meet the needs of expectant mothers. These packages typically include regular prenatal check-ups, ultrasound scans, prenatal vitamins, and guidance on nutrition, exercise, and childbirth preparation.' 
+                    },
+                    {
+                        question: 'Is the medical helpline available for general inquiries, or only for emergencies?',
+                        answer: '- Our medical helpline is available for both general inquiries and emergencies. You can call the helpline for assistance with appointment scheduling, clarification of medical doubts, or urgent medical advice outside of regular hospital hours.' 
+                    },
+                    {
+                        question: 'What should I do if I have been bitten by a dog? Do you offer treatment for dog bites?',
+                        answer: '- If you have been bitten by a dog, it\'s important to seek medical attention promptly. Our hospital provides comprehensive treatment for dog bites, including wound cleaning, tetanus vaccination, antibiotic therapy, and rabies prophylaxis if necessary.' 
+                    },
+                    {
+                        question: 'At what age should women start getting Pap smears for cervical cancer screening?',
+                        answer: '- Women should typically begin cervical cancer screening with Pap smears starting at age 21. After the initial screening, the frequency of Pap smears may vary depending on age and risk factors, as recommended by your healthcare provider.' 
+                    },
+                    {
+                        question: 'Are there any specific preparations needed before a Pap smear test?',
+                        answer: '- Generally, no special preparations are required before a Pap smear test. However, it\'s advisable to avoid douching, using vaginal creams, or having sexual intercourse for at least 24 hours before the test to ensure accurate results.' 
+                    }
+                ];
+            });
+        </script>
+        <script>
+            function goBack() {
+                window.history.back();
+            }
+        </script>
+    </div>
+</body>
+</html>

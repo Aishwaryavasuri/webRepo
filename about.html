@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Company</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+
+        header {
+            background-color: #0d4a7c;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            position: relative; 
+        }
+
+        .logo {
+            position: absolute;
+            left: 20px; 
+            top: 50%;
+            transform: translateY(-50%);
+            max-width: 150px; 
+            height: auto;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            display: inline-block; 
+        }
+
+        .back-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: #4CAF50; 
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        nav {
+            background-color: #0d4a7c;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            background-color: #0d4a7c;
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #0d4a7c;
+        }
+
+        hr {
+            width: 100%;
+            margin: 20px auto;
+            border: 0;
+            height: 1px;
+            background-color: #ccc;
+        }
+
+        section {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        section h2 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        section p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #666;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img class="logo" src="images.jpg" alt="Company Logo">
+        <h1>About MediCare Innovations</h1>
+        <button class="back-button" onclick="goBack()">Back</button>
+    </header>
+    <section>
+        <h2>Welcome to MediCare Innovations</h2>
+        <p>
+            MediCare Innovations is a leading healthcare technology company dedicated to revolutionizing patient care through innovative solutions.
+        </p>
+        <p>
+            Founded in 2010 by a team of experienced healthcare professionals and technology enthusiasts, MediCare Innovations has been committed to improving healthcare outcomes by leveraging cutting-edge technology and data-driven approaches.
+        </p>
+        <p>
+            Our mission is to empower healthcare providers and patients with advanced tools and insights to enhance the quality, efficiency, and accessibility of healthcare services.
+        </p>
+        <p>
+            At MediCare Innovations, we envision a future where healthcare is seamlessly integrated, personalized, and accessible to all, regardless of geographical location or socioeconomic status.
+        </p>
+        <p>
+            Our core values include innovation, integrity, collaboration, and patient-centricity. We strive to uphold these values in everything we do, from product development to customer support.
+        </p>
+        <p>
+            What sets MediCare Innovations apart from others in the healthcare industry is our relentless focus on innovation and our dedication to delivering tangible results. We continuously push the boundaries of what's possible in healthcare technology to address the evolving needs of patients, providers, and healthcare systems worldwide.
+        </p>
+    </section>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>
